@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b63a2691ccc75477871ef9c788da2182",
+    "revision": "71c180b078b20d31c9c0dda99c0483f7",
     "url": "/canvas-whiteboard/index.html"
   },
   {
-    "revision": "e412f0c66a50c4c51e60",
+    "revision": "6a38a30a69c133299372",
     "url": "/canvas-whiteboard/static/css/main.36776a45.chunk.css"
   },
   {
-    "revision": "074ccde112d91280bc4c",
-    "url": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js"
+    "revision": "b91cb1a79f2909eb5448",
+    "url": "/canvas-whiteboard/static/js/2.47c12d63.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js.LICENSE.txt"
+    "url": "/canvas-whiteboard/static/js/2.47c12d63.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e412f0c66a50c4c51e60",
-    "url": "/canvas-whiteboard/static/js/main.d6e674d5.chunk.js"
+    "revision": "6a38a30a69c133299372",
+    "url": "/canvas-whiteboard/static/js/main.8d2a55a2.chunk.js"
   },
   {
     "revision": "4a108f880b64575914c7",
