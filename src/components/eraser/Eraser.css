@@ -1,0 +1,18 @@
+.eraser-wrapper.toolbar-content-active {
+  background-color: #0178d7;
+  border-radius: 4px;
+}
+.eraser-wrapper.img-acitve {
+  filter: invert(1) brightness(1.8);
+}
+.brush-style-container {
+  border: 0 solid hsla(0, 0%, 100%, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: absolute;
+  /* left: -5.5px; */
+  z-index: 10;
+  left: 52px;
+  top: 0;
+  padding: 8px;
+}

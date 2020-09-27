@@ -1,3 +1,3 @@
-import Pen from './Pen'
+import Pen from "./Pen";
 
-export default Pen
+export default Pen;

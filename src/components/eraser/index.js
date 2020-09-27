@@ -1,3 +1,3 @@
-import Eraser from './Eraser'
+import Eraser from "./Eraser";
 
-export default Eraser
+export default Eraser;

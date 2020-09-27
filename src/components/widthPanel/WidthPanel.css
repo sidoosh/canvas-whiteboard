@@ -1,0 +1,33 @@
+.width-panel-content {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 0.5rem;
+}
+
+.width-panel-box {
+  position: relative;
+  height: 1.875rem;
+  width: 1.875rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  user-select: none;
+  background-color: #e9ecef;
+  border: 0;
+  border-radius: 4px;
+  margin: 0.125rem 0;
+  padding: 0.25rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.width-panel-content.toolbar-content-active {
+  background-color: #0178d7;
+  border-radius: 4px;
+}
+.width-panel-content.img-acitve {
+  filter: invert(1) brightness(1.8);
+}

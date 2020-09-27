@@ -1,13 +1,30 @@
-import React from 'react'
-import { ReactComponent as Higlighter } from './highlighter.svg';
+import React, { useState } from "react";
+import { ReactComponent as HighlighterSvg } from "../../assets/pen1.svg";
+import WidthPanel from "../widthPanel";
 
 const Highlighter = (props) => {
-    return (
-        <div>
-            <Higlighter />
-        </div>
-    )
-}
+  const [showHighLighter, setHighLighter] = useState(false);
 
-export default Highlighter
+  const handlePenState = () => {
+    setHighLighter(!showHighLighter);
+  };
+  return (
+    <div onClick={handlePenState}>
+      <div
+        style={{
+          backgroundColor: showHighLighter ? "rgb(73, 89, 172)" : "transparent",
+        }}
+      >
+        <HighlighterSvg />
+      </div>
+      {showHighLighter && (
+        <WidthPanel
+          sendBrushStyle={props.onBrushChange}
+          className={!showHighLighter ? "draggable" : null}
+        />
+      )}
+    </div>
+  );
+};
 
+export default Highlighter;

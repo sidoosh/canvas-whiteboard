@@ -1,0 +1,113 @@
+.color-picker-control-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 0px 0 0 8px;
+  border: 0 solid hsla(0, 0%, 100%, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.color-picker-label-swatch {
+  height: 1.875rem;
+  width: 1.875rem;
+  -webkit-margin-end: 0.25rem;
+  margin-inline-end: 0.25rem;
+  border: 1px solid #dee2e6;
+  position: relative;
+  overflow: hidden;
+}
+.color-input-container {
+  display: flex;
+}
+
+.color-picker-hash {
+  height: 1.875rem;
+  width: 1.875rem;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #dee2e6;
+  border: 1px solid #dee2e6;
+}
+.color-picker-input {
+  width: 12ch;
+  margin: 0;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+  height: 1.75em;
+  box-shadow: var(--input-border-color) 0 0 0 1px inset;
+  float: left;
+  padding: 1px;
+  -webkit-padding-start: 0.5em;
+  padding-inline-start: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0 4px 4px 0;
+}
+.popover {
+  position: relative;
+  top: 12px;
+  left: -2px;
+}
+.color-picker {
+  border: 0 solid hsla(0, 0%, 100%, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  left: -5.5px;
+}
+
+.color-picker-triangle {
+  left: 12px;
+}
+.color-picker-triangle-shadow {
+  border-color: transparent transparent rgba(0, 0, 0, 0.1);
+  top: -11px;
+}
+.color-picker-triangle {
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-bottom: 10px solid black;
+  border-right: 9px solid transparent;
+  border-top: 0 solid transparent;
+  position: absolute;
+  top: -10px;
+}
+.color-picker-content {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 0.5rem;
+}
+
+.color-picker-swatch {
+  position: relative;
+  height: 1.875rem;
+  width: 1.875rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+button {
+  user-select: none;
+  background-color: #e9ecef;
+  border: 0;
+  border-radius: 4px;
+  margin: 0.125rem 0;
+  padding: 0.25rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.color-picker-keybinding {
+  position: absolute;
+  bottom: 2px;
+  color: #d4d4d4;
+  font-size: 0.7em;
+}
