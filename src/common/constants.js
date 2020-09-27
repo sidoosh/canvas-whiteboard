@@ -6,6 +6,7 @@ export default {
   TOOLS: {
     PEN: "pen",
     ERASER: "eraser",
+    HIGHLIGHTER: "highlighter",
   },
   COLOR_INPUT_ID: "input-color-picker",
   WIDTH_PANEL_SIZES: [
@@ -43,6 +44,18 @@ export default {
     },
   ],
   DEFAULT_COLORS: [
+    "#000000",
+    "#343a40",
+    "#495057",
+    "#c92a2a",
+    "#a61e4d",
+    "#862e9c",
+    "#5f3dc4",
+    "#364fc7",
+    "#2b8a3e",
+    "#d9480f",
+  ],
+  DEFAULT_HIGHTLIGHTER_COLORS: [
     "#000000",
     "#343a40",
     "#495057",

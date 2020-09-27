@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as HighlighterSvg } from "../../assets/pen1.svg";
-import WidthPanel from "../widthPanel";
+import Constants from "../../common/constants";
+import ColorPicker from "../colorPicker";
 
 const Highlighter = (props) => {
-  const [showHighLighter, setHighLighter] = useState(false);
+  const isHighlighter =
+    props.selectedTool === Constants.TOOLS.HIGHLIGHTER && !props.hideTool;
 
-  const handlePenState = () => {
-    setHighLighter(!showHighLighter);
-  };
   return (
-    <div onClick={handlePenState}>
-      <div
-        style={{
-          backgroundColor: showHighLighter ? "rgb(73, 89, 172)" : "transparent",
-        }}
-      >
-        <HighlighterSvg />
-      </div>
-      {showHighLighter && (
-        <WidthPanel
-          sendBrushStyle={props.onBrushChange}
-          className={!showHighLighter ? "draggable" : null}
+    <div>
+      <div className={isHighlighter ? "toolbar-content-active" : ""}>
+        <HighlighterSvg
+          className={isHighlighter ? "img-acitve" : ""}
+          onClick={props.changeTool}
+          data-tool={Constants.TOOLS.HIGHLIGHTER}
         />
+      </div>
+      {isHighlighter && (
+        <div className="brush-style-container" style={{ height: 131 }}>
+          <ColorPicker
+            sendBrushStyle={props.changeBrushStyle}
+            color={props.brushStyle.color}
+          />
+        </div>
       )}
     </div>
   );

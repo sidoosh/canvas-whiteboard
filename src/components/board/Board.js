@@ -14,8 +14,7 @@ class Board extends Component {
         width: Constants.DEFAULT_LINE_WIDTH,
       },
       selectedTool: Constants.DEFAULT_TOOL,
-      isClearing: false,
-      prevTool: null,
+      hideTool: false,
     };
   }
 
@@ -48,6 +47,14 @@ class Board extends Component {
     window.removeEventListener("beforeunload", this.unloadHandler);
   }
 
+  getMousePos = (e) => {
+    var rect = this.canvasRef.current.getBoundingClientRect();
+    return {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    };
+  };
+
   handlMouseUp = (e) => {
     if (!this.state.isDrawing) return;
     e.stopPropagation();
@@ -58,25 +65,28 @@ class Board extends Component {
 
   handleMouseDown = (e) => {
     e.stopPropagation();
-    const { clientX, clientY } = e;
+    const { x, y } = this.getMousePos(e);
     this.contextRef.current.strokeStyle = this.state.brushStyle.color;
     this.contextRef.current.lineWidth = this.state.brushStyle.width;
     this.contextRef.current.beginPath();
-    this.contextRef.current.moveTo(clientX, clientY);
+    this.contextRef.current.moveTo(x, y);
     this.setState({ isDrawing: true });
   };
 
   handleMouseMove = (e) => {
     if (!this.state.isDrawing) return;
     e.stopPropagation();
-    const { clientX, clientY } = e;
 
-    if (this.state.selectedTool === Constants.TOOLS.PEN) {
-      this.contextRef.current.lineTo(clientX, clientY);
+    const { x, y } = this.getMousePos(e);
+    if (
+      this.state.selectedTool === Constants.TOOLS.PEN ||
+      this.state.selectedTool === Constants.TOOLS.HIGHLIGHTER
+    ) {
+      this.contextRef.current.lineTo(x, y);
       this.contextRef.current.stroke();
     } else if (this.state.selectedTool === Constants.TOOLS.ERASER) {
       const width = this.state.brushStyle.width;
-      this.contextRef.current.clearRect(clientX, clientY, 4 * width, 4 * width);
+      this.contextRef.current.clearRect(x, y, 4 * width, 4 * width);
     }
   };
 
@@ -93,10 +103,10 @@ class Board extends Component {
 
   handleToolChange = (e) => {
     const { tool } = e.currentTarget.dataset;
-    const prevTool = this.state.selectedTool;
+    const { selectedTool: current } = this.state;
     this.setState({
       selectedTool: tool,
-      prevTool,
+      hideTool: current === tool && !this.state.hideTool,
     });
   };
 
@@ -107,7 +117,7 @@ class Board extends Component {
           className="toolbar"
           changeBrushStyle={this.handleBrushChange}
           selectedTool={this.state.selectedTool}
-          prevTool={this.state.prevTool}
+          hideTool={this.state.hideTool}
           changeTool={this.handleToolChange}
           brushStyle={this.state.brushStyle}
         />

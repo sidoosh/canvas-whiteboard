@@ -6,12 +6,16 @@ import ColorPicker from "../colorPicker";
 import "./Pen.css";
 
 const Pen = (props) => {
-  const isPen = props.selectedTool === Constants.TOOLS.PEN;
+  const isPen = props.selectedTool === Constants.TOOLS.PEN && !props.hideTool;
 
   return (
-    <div onClick={props.changeTool} data-tool={Constants.TOOLS.PEN}>
+    <div>
       <div className={isPen ? "toolbar-content-active" : ""}>
-        <PenSvg className={isPen ? "img-acitve" : ""} />
+        <PenSvg
+          className={isPen ? "img-acitve" : ""}
+          onClick={props.changeTool}
+          data-tool={Constants.TOOLS.PEN}
+        />
       </div>
       {isPen && (
         <div className="brush-style-container">

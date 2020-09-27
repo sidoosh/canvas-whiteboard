@@ -5,15 +5,17 @@ import "./Eraser.css";
 import Constants from "../../common/constants";
 
 const Eraser = (props) => {
-  const isEraser = props.selectedTool === Constants.TOOLS.ERASER;
+  const isEraser =
+    props.selectedTool === Constants.TOOLS.ERASER && !props.hideTool;
+
   return (
-    <div
-      className="eraser-wrapper"
-      onClick={props.changeTool}
-      data-tool={Constants.TOOLS.ERASER}
-    >
+    <div className="eraser-wrapper">
       <div className={isEraser ? "toolbar-content-active" : ""}>
-        <EraserSvg className={isEraser ? "img-acitve" : ""} />
+        <EraserSvg
+          onClick={props.changeTool}
+          data-tool={Constants.TOOLS.ERASER}
+          className={isEraser ? "img-acitve" : ""}
+        />
       </div>
       {isEraser && (
         <div className="brush-style-container">
