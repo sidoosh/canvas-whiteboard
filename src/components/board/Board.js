@@ -57,14 +57,12 @@ class Board extends Component {
 
   handlMouseUp = (e) => {
     if (!this.state.isDrawing) return;
-    e.stopPropagation();
     this.contextRef.current.closePath();
-    this.contextRef.current.save();
+    // this.contextRef.current.save();
     this.setState({ isDrawing: false });
   };
 
   handleMouseDown = (e) => {
-    e.stopPropagation();
     const { x, y } = this.getMousePos(e);
     this.contextRef.current.strokeStyle = this.state.brushStyle.color;
     this.contextRef.current.lineWidth = this.state.brushStyle.width;
@@ -75,18 +73,20 @@ class Board extends Component {
 
   handleMouseMove = (e) => {
     if (!this.state.isDrawing) return;
-    e.stopPropagation();
 
     const { x, y } = this.getMousePos(e);
-    if (
-      this.state.selectedTool === Constants.TOOLS.PEN ||
-      this.state.selectedTool === Constants.TOOLS.HIGHLIGHTER
-    ) {
+    if (this.state.selectedTool === Constants.TOOLS.PEN) {
       this.contextRef.current.lineTo(x, y);
       this.contextRef.current.stroke();
+      this.contextRef.current.globalAlpha = 1;
     } else if (this.state.selectedTool === Constants.TOOLS.ERASER) {
       const width = this.state.brushStyle.width;
+      this.contextRef.current.globalAlpha = 1;
       this.contextRef.current.clearRect(x, y, 4 * width, 4 * width);
+    } else if (this.state.selectedTool === Constants.TOOLS.HIGHLIGHTER) {
+      this.contextRef.current.globalAlpha = 0.5;
+      this.contextRef.current.lineTo(x, y);
+      this.contextRef.current.stroke();
     }
   };
 
@@ -104,10 +104,27 @@ class Board extends Component {
   handleToolChange = (e) => {
     const { tool } = e.currentTarget.dataset;
     const { selectedTool: current } = this.state;
-    this.setState({
-      selectedTool: tool,
-      hideTool: current === tool && !this.state.hideTool,
-    });
+    const { brushStyle } = this.state;
+    if (tool === Constants.TOOLS.HIGHLIGHTER) {
+      this.setState({
+        selectedTool: tool,
+        hideTool: current === tool && !this.state.hideTool,
+        brushStyle: {
+          ...brushStyle,
+          alpha: 0.5,
+          width: 5,
+        },
+      });
+    } else {
+      this.setState({
+        selectedTool: tool,
+        hideTool: current === tool && !this.state.hideTool,
+        brushStyle: {
+          ...brushStyle,
+          alpha: 1,
+        },
+      });
+    }
   };
 
   render() {
