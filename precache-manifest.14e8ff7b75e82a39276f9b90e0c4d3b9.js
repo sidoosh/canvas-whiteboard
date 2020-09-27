@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87e333269004086969d4496be43c96de",
+    "revision": "2c43eb8e61c5aee0b6f89b2ec47e2155",
     "url": "/canvas-whiteboard/index.html"
   },
   {
-    "revision": "fd2d88b9da234fc4c128",
+    "revision": "e412f0c66a50c4c51e60",
     "url": "/canvas-whiteboard/static/css/main.36776a45.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fd2d88b9da234fc4c128",
-    "url": "/canvas-whiteboard/static/js/main.d62ca61d.chunk.js"
+    "revision": "e412f0c66a50c4c51e60",
+    "url": "/canvas-whiteboard/static/js/main.d6e674d5.chunk.js"
   },
   {
     "revision": "4a108f880b64575914c7",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f79c75b62bef12c4d0e876d669f4595d",
     "url": "/canvas-whiteboard/static/media/eraser.f79c75b6.svg"
+  },
+  {
+    "revision": "fbf412fd6152e97eaa0000d4409eed63",
+    "url": "/canvas-whiteboard/static/media/pen1.fbf412fd.svg"
   },
   {
     "revision": "c18407ddd7773a8eb7753f6ca7e8300a",
