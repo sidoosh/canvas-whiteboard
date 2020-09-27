@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/whiteboard/static/css/main.36776a45.chunk.css",
-    "main.js": "/whiteboard/static/js/main.d62ca61d.chunk.js",
-    "main.js.map": "/whiteboard/static/js/main.d62ca61d.chunk.js.map",
-    "runtime-main.js": "/whiteboard/static/js/runtime-main.094aa111.js",
-    "runtime-main.js.map": "/whiteboard/static/js/runtime-main.094aa111.js.map",
-    "static/js/2.3ef6d201.chunk.js": "/whiteboard/static/js/2.3ef6d201.chunk.js",
-    "static/js/2.3ef6d201.chunk.js.map": "/whiteboard/static/js/2.3ef6d201.chunk.js.map",
-    "index.html": "/whiteboard/index.html",
-    "precache-manifest.0e1c8d27a99d24ddaa70cd5adc340270.js": "/whiteboard/precache-manifest.0e1c8d27a99d24ddaa70cd5adc340270.js",
-    "service-worker.js": "/whiteboard/service-worker.js",
-    "static/css/main.36776a45.chunk.css.map": "/whiteboard/static/css/main.36776a45.chunk.css.map",
-    "static/js/2.3ef6d201.chunk.js.LICENSE.txt": "/whiteboard/static/js/2.3ef6d201.chunk.js.LICENSE.txt",
-    "static/media/eraser.f79c75b6.svg": "/whiteboard/static/media/eraser.f79c75b6.svg",
-    "static/media/pen2.c18407dd.svg": "/whiteboard/static/media/pen2.c18407dd.svg"
+    "main.css": "/canvas-whiteboard/static/css/main.36776a45.chunk.css",
+    "main.js": "/canvas-whiteboard/static/js/main.d62ca61d.chunk.js",
+    "main.js.map": "/canvas-whiteboard/static/js/main.d62ca61d.chunk.js.map",
+    "runtime-main.js": "/canvas-whiteboard/static/js/runtime-main.358edef2.js",
+    "runtime-main.js.map": "/canvas-whiteboard/static/js/runtime-main.358edef2.js.map",
+    "static/js/2.3ef6d201.chunk.js": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js",
+    "static/js/2.3ef6d201.chunk.js.map": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js.map",
+    "index.html": "/canvas-whiteboard/index.html",
+    "precache-manifest.75396eeddacd11c676772a3af4de0c42.js": "/canvas-whiteboard/precache-manifest.75396eeddacd11c676772a3af4de0c42.js",
+    "service-worker.js": "/canvas-whiteboard/service-worker.js",
+    "static/css/main.36776a45.chunk.css.map": "/canvas-whiteboard/static/css/main.36776a45.chunk.css.map",
+    "static/js/2.3ef6d201.chunk.js.LICENSE.txt": "/canvas-whiteboard/static/js/2.3ef6d201.chunk.js.LICENSE.txt",
+    "static/media/eraser.f79c75b6.svg": "/canvas-whiteboard/static/media/eraser.f79c75b6.svg",
+    "static/media/pen2.c18407dd.svg": "/canvas-whiteboard/static/media/pen2.c18407dd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.094aa111.js",
+    "static/js/runtime-main.358edef2.js",
     "static/js/2.3ef6d201.chunk.js",
     "static/css/main.36776a45.chunk.css",
     "static/js/main.d62ca61d.chunk.js"
