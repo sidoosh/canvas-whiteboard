@@ -16,7 +16,7 @@ It is built using React and HTML5 canvas
 
 ### Possible Enhancements
 
-- Canvas resizing and support for mobile web browser
+- Canvas support for mobile web browser
 - Support for keyboard input
 - Undo/Redo functionality
 - Application tour for first time
