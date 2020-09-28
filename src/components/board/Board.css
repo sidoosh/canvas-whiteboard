@@ -1,6 +1,6 @@
 .board-wrapper {
   display: block;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
   margin: 0px;
@@ -16,4 +16,9 @@
 .toolbar {
   display: flex;
   flex-flow: column;
+}
+.canvas-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
