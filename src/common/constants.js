@@ -3,6 +3,8 @@ export default {
   DEFAULT_STROKE_COLOR: "#12b886",
   DEFAULT_LINE_WIDTH: "5",
   DEFAULT_TOOL: "pen",
+  HIGHLIGHTER_OPACITY: 0.5,
+  DEFAULT_OPACITY: 1,
   TOOLS: {
     PEN: "pen",
     ERASER: "eraser",

@@ -41,8 +41,8 @@ class Board extends Component {
     draftCtx.strokeStyle = this.state.brushStyle.color;
     draftCtx.lineWidth = this.state.brushStyle.width;
     this.draftContextRef.current = draftCtx;
-    draft.style.opacity = 0.5;
-    ctx.globalAlpha = 1;
+    draft.style.opacity = Constants.DEFAULT_OPACITY;
+    ctx.globalAlpha = Constants.DEFAULT_OPACITY;
     this.contextRef.current = ctx;
   };
 
@@ -102,13 +102,13 @@ class Board extends Component {
     if (this.state.selectedTool === Constants.TOOLS.PEN) {
       this.draftContextRef.current.lineTo(x, y);
       this.draftContextRef.current.stroke();
-      this.draftRef.current.style.opacity = 1;
+      this.draftRef.current.style.opacity = Constants.DEFAULT_OPACITY;
     } else if (this.state.selectedTool === Constants.TOOLS.ERASER) {
       const width = this.state.brushStyle.width;
-      this.draftRef.current.style.opacity = 1;
       this.draftContextRef.current.clearRect(x, y, 4 * width, 4 * width);
+      this.contextRef.current.clearRect(x, y, 4 * width, 4 * width);
     } else if (this.state.selectedTool === Constants.TOOLS.HIGHLIGHTER) {
-      this.draftRef.current.style.opacity = 0.5;
+      this.draftRef.current.style.opacity = Constants.HIGHLIGHTER_OPACITY;
       this.draftContextRef.current.lineTo(x, y);
       this.draftContextRef.current.stroke();
     }
@@ -135,7 +135,6 @@ class Board extends Component {
         hideTool: current === tool && !this.state.hideTool,
         brushStyle: {
           ...brushStyle,
-          alpha: 0.5,
           width: 5,
         },
       });
@@ -143,10 +142,6 @@ class Board extends Component {
       this.setState({
         selectedTool: tool,
         hideTool: current === tool && !this.state.hideTool,
-        brushStyle: {
-          ...brushStyle,
-          alpha: 1,
-        },
       });
     }
   };
@@ -162,13 +157,7 @@ class Board extends Component {
           changeTool={this.handleToolChange}
           brushStyle={this.state.brushStyle}
         />
-        <canvas
-          className="canvas-wrapper"
-          ref={this.canvasRef}
-          // onMouseDown={this.handleMouseDown}
-          // onMouseMove={this.handleMouseMove}
-          // onMouseUp={this.handlMouseUp}
-        />
+        <canvas className="canvas-wrapper" ref={this.canvasRef} />
         <canvas
           className="canvas-wrapper"
           ref={this.draftRef}
